@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileDCS", "FileDCS\FileDCS.csproj", "{EF1CBD6C-281C-45C7-BCB4-765C71F29591}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileDB", "FileDB\FileDB.csproj", "{3A4E9018-9C6F-456F-BD32-E63EBB26A884}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZeroMQ.netcore", "clrzmq4-master\ZeroMQ.netcore.csproj", "{E72DB7ED-B797-4689-95DB-829DF8944918}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF1CBD6C-281C-45C7-BCB4-765C71F29591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1CBD6C-281C-45C7-BCB4-765C71F29591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1CBD6C-281C-45C7-BCB4-765C71F29591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1CBD6C-281C-45C7-BCB4-765C71F29591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A4E9018-9C6F-456F-BD32-E63EBB26A884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4E9018-9C6F-456F-BD32-E63EBB26A884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4E9018-9C6F-456F-BD32-E63EBB26A884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4E9018-9C6F-456F-BD32-E63EBB26A884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E72DB7ED-B797-4689-95DB-829DF8944918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E72DB7ED-B797-4689-95DB-829DF8944918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E72DB7ED-B797-4689-95DB-829DF8944918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E72DB7ED-B797-4689-95DB-829DF8944918}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B89A687-4D63-4311-8960-19CAA3F912AB}
+	EndGlobalSection
+EndGlobal

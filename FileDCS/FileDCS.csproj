@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\clrzmq4-master\ZeroMQ.netcore.csproj" />
+    <ProjectReference Include="..\FileDB\FileDB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="libdb_dotnet181">
+      <HintPath>dll\libdb_dotnet181.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
