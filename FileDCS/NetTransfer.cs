@@ -340,6 +340,8 @@ namespace FileDCS
                              {
                                  var buf = new byte[1024 * 1024 * 10];
                                  int len = 0;
+                                 Random random = new Random();
+                                var tmpFlage= random.Next();//产生一个临时数据，用于同一机器的不同程序工作
                                  while (len <= buf.Length)
                                  {
                                      len = fs.Read(new byte[1024 * 1024 * 10], 0, buf.Length);
@@ -347,6 +349,7 @@ namespace FileDCS
                                      using (var message = new ZMessage())
                                      {
                                          message.Add(new ZFrame(LocalNode.MyNodeFlage));
+                                         message.Add(new ZFrame(tmpFlage));
                                          message.Add(new ZFrame(file));
                                          message.Add(new ZFrame(len < buf.Length ? 1 : 0));
                                          message.Add(new ZFrame(buf));//主题数据，只使用数据
@@ -364,7 +367,13 @@ namespace FileDCS
 
         }
    
-    
+        /// <summary>
+        /// 请求文件
+        /// </summary>
+        /// <param name="address">目的地址</param>
+        /// <param name="file">文件名称</param>
+        /// <param name="opt">操作</param>
+        /// <returns></returns>
        public  RepFile SendReq(string address,string file,string opt)
         {
             RepFile repFile = new RepFile();
@@ -387,10 +396,12 @@ namespace FileDCS
                     {
                         var msg = requester.ReceiveMessage();
                         var flage = msg.PopString();
-                        var tmp = msg.PopString();
+                        var tmpFlage = msg.PopInt32();
+                        var tmpFile = msg.PopString();
                         var iscomp = msg.PopInt32();
                         var buf = msg.Pop().Read();
                         repFile.NodeFlage = flage;
+                        repFile.TmpFlage = tmpFlage;
                         if (opt == "copy")
                         {
                            repFile.File= Write(file,pre, buf);
@@ -411,6 +422,12 @@ namespace FileDCS
             return repFile;
         }
 
+        /// <summary>
+        /// 删除文件
+        /// </summary>
+        /// <param name="address">地址</param>
+        /// <param name="file">文件</param>
+        /// <returns></returns>
         public string  SendDelete(string address, string file)
         {
             string rep = "";

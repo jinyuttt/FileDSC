@@ -40,6 +40,8 @@ namespace FileDCS
         /// </summary>
         public static string MyNodeTmp = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
 
+        public static string NodeWatchDir = "";
+
        /// <summary>
        /// 加入的地址
        /// </summary>

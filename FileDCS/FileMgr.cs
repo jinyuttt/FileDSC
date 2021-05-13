@@ -42,7 +42,14 @@ namespace FileDCS
             {
                 LocalNode.MyNodeFlage = v;
             }
-
+            if(!string.IsNullOrEmpty(LocalNode.NodeWatchDir))
+            {
+                string[] files = Directory.GetFiles(LocalNode.NodeWatchDir);
+                foreach(var f in files)
+                {
+                    this.Add(f);
+                }
+            }
             //初始化网络接收
             netTransfer.Init();
             //
